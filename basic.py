@@ -14,7 +14,7 @@ def read_images(path1, path2):
 
 
 if __name__ == '__main__':
-    content_img, style_img = read_images('starry.jpg', 'taj.jpg')
+    content_img, style_img = read_images('assets/content_images/nitt.jpg', 'assets/style_images/starry.jpg')
     cv2.imshow('content_img', content_img)
     cv2.imshow('style_img', style_img)
 

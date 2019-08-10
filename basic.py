@@ -88,6 +88,17 @@ def style_content_loss(outputs):
     return loss
 
 
+def train_step(image, extractor):
+    with tf.GradientTape() as tape:
+        outputs = extractor(tf.keras.applications.vgg19.preprocess_input(image))
+        # outputs = extractor(image)
+        loss = style_content_loss(outputs)
+
+    grad = tape.gradient(loss, image)
+    opt.apply_gradients([(grad, image)])
+    image.assign(clip_0_1(image))
+
+
 if __name__ == '__main__':
     content = ['block5_conv2']  # From the research paper, these were the best layers to work with
     style = ['block1_conv1',

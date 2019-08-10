@@ -113,3 +113,8 @@ if __name__ == '__main__':
 
     style_weight = 1e-2
     content_weight = 1e4
+
+    content_img = tf.expand_dims(tf.squeeze(tf.cast(content_img, tf.float32)), axis=0)
+    content_targets = extractor(content_img)['content']
+    style_img = tf.expand_dims(tf.squeeze(tf.cast(style_img, tf.float32)), axis=0)
+    style_targets = extractor(style_img)['style']

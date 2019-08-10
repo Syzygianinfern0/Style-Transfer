@@ -42,6 +42,34 @@ def get_model(layers):
     return tf.keras.Model(vgg.input, out)
 
 
+# noinspection PyAbstractClass
+class Forward(tf.keras.Model):
+    # noinspection PyShadowingNames
+    def __init__(self, content, style):
+        super().__init__()
+        self.vgg = get_model(style + content)       # Create the model which gives the required layer outputs
+        self.style = style      # List of strings
+        self.content = content  # List of strings
+        self.vgg.trainable = False                  # Model weights to be constant
+
+    # noinspection PyMethodOverriding
+    def call(self, inputs):
+        proc = tf.keras.applications.vgg19.preprocess_input(inputs)
+        outputs = self.vgg(proc)
+        style_outs, content_outs = (outputs[:5], outputs[5:])       # 5 style layers on 1 content layer
+
+        style_outputs = [gram_matrix(style_out)                     # Convert to gram matrix version
+                         for style_out in style_outs]
+        style_dict = {style_name: value
+                      for style_name, value
+                      in zip(self.style, style_outputs)}
+        content_dict = {content_name: value
+                        for content_name, value
+                        in zip(self.content, content_outs)}
+
+        return {'content': content_dict, 'style': style_dict}
+
+
 if __name__ == '__main__':
     content = ['block5_conv2']  # From the research paper, these were the best layers to work with
     style = ['block1_conv1',

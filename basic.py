@@ -47,18 +47,18 @@ class Forward(tf.keras.Model):
     # noinspection PyShadowingNames
     def __init__(self, content, style):
         super().__init__()
-        self.vgg = get_model(style + content)       # Create the model which gives the required layer outputs
-        self.style = style      # List of strings
+        self.vgg = get_model(style + content)  # Create the model which gives the required layer outputs
+        self.style = style  # List of strings
         self.content = content  # List of strings
-        self.vgg.trainable = False                  # Model weights to be constant
+        self.vgg.trainable = False  # Model weights to be constant
 
     # noinspection PyMethodOverriding
     def call(self, inputs):
         proc = tf.keras.applications.vgg19.preprocess_input(inputs)
         outputs = self.vgg(proc)
-        style_outs, content_outs = (outputs[:5], outputs[5:])       # 5 style layers on 1 content layer
+        style_outs, content_outs = (outputs[:5], outputs[5:])  # 5 style layers on 1 content layer
 
-        style_outputs = [gram_matrix(style_out)                     # Convert to gram matrix version
+        style_outputs = [gram_matrix(style_out)  # Convert to gram matrix version
                          for style_out in style_outs]
         style_dict = {style_name: value
                       for style_name, value
@@ -70,6 +70,24 @@ class Forward(tf.keras.Model):
         return {'content': content_dict, 'style': style_dict}
 
 
+def clip_0_1(image):
+    return tf.clip_by_value(image, clip_value_min=0.0, clip_value_max=1.0)
+
+
+def style_content_loss(outputs):
+    style_outputs = outputs['style']
+    content_outputs = outputs['content']
+    style_loss = tf.add_n([tf.reduce_mean((style_outputs[name] - style_targets[name]) ** 2)
+                           for name in style_outputs.keys()])
+    style_loss *= style_weight / 5
+
+    content_loss = tf.add_n([tf.reduce_mean((content_outputs[name] - content_targets[name]) ** 2)
+                             for name in content_outputs.keys()])
+    content_loss *= content_weight / 1
+    loss = style_loss + content_loss
+    return loss
+
+
 if __name__ == '__main__':
     content = ['block5_conv2']  # From the research paper, these were the best layers to work with
     style = ['block1_conv1',
@@ -79,3 +97,8 @@ if __name__ == '__main__':
              'block5_conv1']
 
     content_img, style_img = read_images('assets/content_images/nitt.jpg', 'assets/style_images/starry.jpg')
+
+    opt = tf.optimizers.Adam(learning_rate=0.02, beta_1=0.99, epsilon=1e-1)
+
+    style_weight = 1e-2
+    content_weight = 1e4

@@ -30,16 +30,15 @@ def gram_matrix(input_tensor: tf.Tensor):
     # it is equivalent to : np.dot(a[0][0].T,a[0][0]) + np.dot(a[0][1].T, a[0][1])
     # if 'a' is of shape (1,2,3,4)
     result = tf.linalg.einsum('bijc,bijd->bcd', input_tensor, input_tensor)
-    return result / tf.shape(input_tensor.shape[1] * input_tensor.shape[2])  # Normalize
+    return result / tf.cast(input_tensor.shape[1] * input_tensor.shape[2], tf.float32)  # Normalize
 
 
 # noinspection PyShadowingNames
-def get_model(content, style):
+def get_model(layers):
     # Loading the Awesome VGG. Set weights to a constant to avoid changing them
     vgg = tf.keras.applications.vgg19.VGG19(include_top=False, weights='imagenet')
     vgg.trainable = False
-    layers = content + style
-    out = [vgg.get_layer(layer).output for layer in layers]
+    out = [vgg.get_layer(layer).output for layer in layers]  # Iterate through the layers
     return tf.keras.Model(vgg.input, out)
 
 

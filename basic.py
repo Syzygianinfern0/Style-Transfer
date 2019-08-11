@@ -1,11 +1,12 @@
 import tensorflow as tf
 import numpy as np
-import matplotlib.pyplot as plt
 import cv2
-from time import sleep
 import os
-from tensorflow.compat.v1 import ConfigProto
-from tensorflow.compat.v1 import InteractiveSession
+
+# noinspection PyProtectedMember
+from tensorflow._api.v2.compat.v1 import ConfigProto
+# noinspection PyProtectedMember
+from tensorflow._api.v2.compat.v1 import InteractiveSession
 
 config = ConfigProto()
 config.gpu_options.allow_growth = True
@@ -21,6 +22,7 @@ def read_images(path1, path2):
     return (img1 / 255).astype(np.float32), (img2 / 255).astype(np.float32)
 
 
+# noinspection PyShadowingNames
 def preprocess(image):
     image = tf.keras.applications.vgg19.preprocess_input(image)
     return image
@@ -92,7 +94,11 @@ def style_content_loss(outputs, style_targets, content_targets):
                              for name in content_outputs.keys()])
     content_loss *= content_weight / 1
 
-    loss = style_loss + content_loss
+    x_deltas, y_deltas = variational(image)
+    var_loss = tf.reduce_mean(x_deltas ** 2) + tf.reduce_mean(y_deltas ** 2)
+    var_loss *= variation_weight
+
+    loss = style_loss + content_loss + var_loss
     return loss
 
 
@@ -114,6 +120,13 @@ def showimg(image):
     cv2.destroyAllWindows()
 
 
+# noinspection PyShadowingNames
+def variational(image):
+    x_var = image[:, :, 1:, :] - image[:, :, :-1, :]  # Frequency variation across columns
+    y_var = image[:, 1:, :, :] - image[:, :-1, :, :]  # Frequency variation across rows
+    return x_var, y_var
+
+
 if __name__ == '__main__':
     content = ['block5_conv2']  # From the research paper, these were the best layers to work with
     style = ['block1_conv1',
@@ -122,7 +135,7 @@ if __name__ == '__main__':
              'block4_conv1',
              'block5_conv1']
 
-    content_img, style_img = read_images('assets/content_images/nitt.jpg', 'assets/style_images/starry.jpg')
+    content_img, style_img = read_images('assets/content_images/nitt.jpg', 'assets/style_images/triangles.jpg')
 
     content_img = np.expand_dims(content_img, 0)
     style_img = np.expand_dims(style_img, 0)
@@ -131,10 +144,21 @@ if __name__ == '__main__':
 
     style_weight = 1e-2
     content_weight = 1e4
+    variation_weight = 1e8
 
     extractor = Forward(content, style)
     content_targets = extractor(content_img)['content']
     style_targets = extractor(style_img)['style']
     image = tf.Variable(content_img)
 
-    train_step(image, extractor, opt)
+    # train_step(image, extractor, opt)
+    # showimg(image)
+
+    epochs = 50
+    num_steps = 100
+    for i in range(epochs):
+        print()
+        for ii in range(num_steps):
+            print('.', end='')
+            train_step(image, extractor, opt)
+        cv2.imwrite(f'./results/{i}.jpg', image.numpy().squeeze() * 255)

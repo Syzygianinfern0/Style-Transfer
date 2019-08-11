@@ -59,7 +59,7 @@ class Forward(tf.keras.Model):
 
     # noinspection PyMethodOverriding
     def call(self, inputs):
-        proc = tf.keras.applications.vgg19.preprocess_input(inputs*255)
+        proc = tf.keras.applications.vgg19.preprocess_input(inputs * 255)
         outputs = self.vgg(proc)
         style_outs, content_outs = (outputs[:5], outputs[5:])  # 5 style layers on 1 content layer
 
@@ -99,13 +99,19 @@ def style_content_loss(outputs, style_targets, content_targets):
 # noinspection PyShadowingNames
 def train_step(image, extractor, opt):
     with tf.GradientTape() as tape:
-        outputs = extractor(tf.keras.applications.vgg19.preprocess_input(image))
-        # outputs = extractor(image)
-        loss = style_content_loss(outputs)
+        outputs = extractor(image)
+        loss = style_content_loss(outputs, style_targets, content_targets)
 
     grad = tape.gradient(loss, image)
     opt.apply_gradients([(grad, image)])
     image.assign(clip_0_1(image))
+
+
+# noinspection PyShadowingNames
+def showimg(image):
+    cv2.imshow('img', image.read_value()[0].numpy())
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 
 if __name__ == '__main__':
@@ -117,6 +123,7 @@ if __name__ == '__main__':
              'block5_conv1']
 
     content_img, style_img = read_images('assets/content_images/nitt.jpg', 'assets/style_images/starry.jpg')
+
     content_img = np.expand_dims(content_img, 0)
     style_img = np.expand_dims(style_img, 0)
 
@@ -124,8 +131,10 @@ if __name__ == '__main__':
 
     style_weight = 1e-2
     content_weight = 1e4
+
     extractor = Forward(content, style)
-    # content_img = tf.expand_dims(tf.squeeze(tf.cast(content_img, tf.float32)), axis=0)
     content_targets = extractor(content_img)['content']
-    # style_img = tf.expand_dims(tf.squeeze(tf.cast(style_img, tf.float32)), axis=0)
-    # style_targets = extractor(style_img)['style']
+    style_targets = extractor(style_img)['style']
+    image = tf.Variable(content_img)
+
+    train_step(image, extractor, opt)

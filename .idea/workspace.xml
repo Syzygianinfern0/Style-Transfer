@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="265696f1-d78e-4473-9c3f-591cfef33313" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/TF Implementation/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/assets/content_images/nitt.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/content_images/nitt.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/assets/style_images/goldcurves.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/style_images/goldcurves.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/assets/style_images/starry.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/style_images/starry.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/assets/style_images/triangles.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/style_images/triangles.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/TF Implementation/basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/results/curves.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TF Implementation/results/curves.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/results/starry.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TF Implementation/results/starry.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old/results/triangles.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/TF Implementation/results/triangles.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style Transfer.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Style Transfer.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Colourful/run_[100].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Colourful/run_[150].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Colourful/run_[200].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Colourful/run_[250].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Colourful/run_[300].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Colourful/run_[50].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Picasso/run_[100].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Picasso/run_[150].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Picasso/run_[200].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Picasso/run_[250].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Picasso/run_[300].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/Picasso/run_[50].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1000].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[100].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1050].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1100].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1150].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1200].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1250].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1300].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1350].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1400].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1450].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1500].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[150].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1550].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1600].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1650].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1700].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1750].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1800].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1850].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1900].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[1950].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2000].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[200].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2050].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2100].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2150].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2200].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2250].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2300].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2350].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2400].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2450].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2500].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[250].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2550].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2600].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2650].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2700].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2750].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2800].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2850].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2900].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[2950].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3000].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[300].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3050].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3100].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3150].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3200].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3250].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3300].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3350].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3400].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3450].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3500].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[350].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3550].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3600].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3650].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3700].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3750].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3800].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3850].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3900].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[3950].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4000].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[400].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4050].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4100].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4150].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4200].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4250].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4300].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4350].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4400].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4450].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4500].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[450].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4550].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4600].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4650].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4700].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4750].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4800].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4850].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4900].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[4950].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[5000].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[500].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[50].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[550].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[600].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[650].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[700].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[750].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[800].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[850].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[900].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gen/run_[950].jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/images/abstract.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/data/style_images/abstract.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/images/dancing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/content_images/dancing.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/images/eiffel.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/data/content_images/eiffel.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/images/picasso.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/style_images/picasso.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/images/sharan.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/content_images/sharan.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="f580150b-56cc-49e7-8e38-0870fe6e1e21">
+    <option name="files">
+      <option value="Style Transfer.ipynb" />
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="240" />
+    <option name="y" value="130" />
+    <option name="width" value="1440" />
+    <option name="height" value="780" />
+  </component>
+  <component name="ProjectId" id="1UkqDG2DmYqFGhj6wGnAVzvDo7K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/style_images" />
+      <recent name="$PROJECT_DIR$/data/content_images" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/data/images" />
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="basic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Style-Transfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.basic" />
+        <item itemvalue="Python.basic" />
+        <item itemvalue="Python.basic" />
+        <item itemvalue="Python.basic" />
+        <item itemvalue="Python.basic" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="265696f1-d78e-4473-9c3f-591cfef33313" name="Default Changelist" comment="" />
+      <created>1565380320182</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565380320182</updated>
+      <workItem from="1565380327968" duration="12523000" />
+      <workItem from="1565442468791" duration="4913000" />
+      <workItem from="1565486293556" duration="12020000" />
+      <workItem from="1575910823768" duration="2469000" />
+      <workItem from="1575954048628" duration="4097000" />
+      <workItem from="1576213429011" duration="497000" />
+    </task>
+    <task id="LOCAL-00001" summary="Images Added">
+      <created>1565382270613</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1565382270613</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Images Added">
+      <created>1565383412235</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1565383412235</updated>
+    </task>
+    <task id="LOCAL-00003" summary="VGG19 Download and Try">
+      <created>1565384231332</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1565384231332</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Model Summary">
+      <created>1565405006516</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565405006516</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Gram Matrix Added">
+      <created>1565419420283</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565419420284</updated>
+    </task>
+    <task id="LOCAL-00006" summary="VGG maker">
+      <created>1565420267624</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565420267624</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix Shape of result returned">
+      <created>1565447742544</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1565447742544</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Forward Prop Implemented">
+      <created>1565448260525</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1565448260525</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Loss Functions are Up">
+      <created>1565456518438</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1565456518438</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Backprop Implemented">
+      <created>1565456563485</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1565456563485</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Some Pre-Processing to avoid dirty code">
+      <created>1565456606789</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565456606789</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Normalize images for faster convergence">
+      <created>1565497166448</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1565497166448</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Completed Training Loop">
+      <created>1565501609512</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1565501609512</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Variational Weights and Training Loop with saving capability">
+      <created>1565522709914</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1565522709914</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Results Added">
+      <created>1565522722458</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1565522722458</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Images Added" />
+    <MESSAGE value="VGG19 Download and Try" />
+    <MESSAGE value="Model Summary" />
+    <MESSAGE value="Gram Matrix Added" />
+    <MESSAGE value="VGG maker" />
+    <MESSAGE value="Fix Shape of result returned" />
+    <MESSAGE value="Forward Prop Implemented" />
+    <MESSAGE value="Loss Functions are Up" />
+    <MESSAGE value="Backprop Implemented" />
+    <MESSAGE value="Some Pre-Processing to avoid dirty code" />
+    <MESSAGE value="Normalize images for faster convergence" />
+    <MESSAGE value="Completed Training Loop" />
+    <MESSAGE value="Variational Weights and Training Loop with saving capability" />
+    <MESSAGE value="Results Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Results Added" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="182" width="800" height="678" key="#Notifications" timestamp="1575954081316">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="555" y="182" width="800" height="678" key="#Notifications/0.0.1920.1043@0.0.1920.1043" timestamp="1575954081316" />
+    <state width="960" height="522" key="XDebugger.FullValuePopup" timestamp="1575954248526">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state width="960" height="522" key="XDebugger.FullValuePopup/0.0.1920.1043@0.0.1920.1043" timestamp="1575954248526" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Style_Transfer$basic.coverage" NAME="basic Coverage Results" MODIFIED="1565497532309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>inputs * 255</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+</project>
